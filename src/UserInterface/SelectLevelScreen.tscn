@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2i2h0disqcut" path="res://src/UserInterface/ChangeSceneButton.tscn" id="5_8osk1"]
 
 [node name="SelectLevelScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,9 +47,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -435.0
+offset_left = -210.0
 offset_top = -75.0
-offset_right = 435.0
+offset_right = 210.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -59,104 +60,104 @@ columns = 10
 [node name="ButtonSound" type="AudioStreamPlayer" parent="GridContainer"]
 stream = ExtResource("3_7l4q7")
 
-[node name="SelectLevel_1" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton1" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "1"
 _level_number = 1
 
-[node name="SelectLevel_2" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton2" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "2"
 _level_number = 2
 
-[node name="SelectLevel_3" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton3" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "3"
 _level_number = 3
 
-[node name="SelectLevel_4" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton4" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "4"
 _level_number = 4
 
-[node name="SelectLevel_5" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton5" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "5"
 _level_number = 5
 
-[node name="SelectLevel_6" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton6" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "6"
 _level_number = 6
 
-[node name="SelectLevel_7" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton7" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "7"
 _level_number = 7
 
-[node name="SelectLevel_8" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton8" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "8"
 _level_number = 8
 
-[node name="SelectLevel_9" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton9" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "9"
 _level_number = 9
 
-[node name="SelectLevel_10" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton10" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "10"
 _level_number = 10
 
-[node name="SelectLevel_11" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton11" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "11"
 _level_number = 11
 
-[node name="SelectLevel_12" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton12" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "12"
 _level_number = 12
 
-[node name="SelectLevel_13" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton13" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "13"
 _level_number = 13
 
-[node name="SelectLevel_14" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton14" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "14"
 _level_number = 14
 
-[node name="SelectLevel_15" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton15" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "15"
 _level_number = 15
 
-[node name="SelectLevel_16" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton16" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "16"
 _level_number = 16
 
-[node name="SelectLevel_17" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton17" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "17"
 _level_number = 17
 
-[node name="SelectLevel_18" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton18" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "18"
 _level_number = 18
 
-[node name="SelectLevel_19" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton19" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "19"
 _level_number = 19
 
-[node name="SelectLevel_20" parent="GridContainer" instance=ExtResource("4_hdlq7")]
+[node name="SelectLevelButton20" parent="GridContainer" instance=ExtResource("4_hdlq7")]
 layout_mode = 2
-disabled = true
+text = "20"
 _level_number = 20
 
 [node name="BackToMainMenuButton" parent="." instance=ExtResource("5_8osk1")]
@@ -173,26 +174,26 @@ offset_bottom = -59.536
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back to Main Menu"
-scene_path = "res://src/UserInterface/MainScreen.tscn"
+_scene_path = "res://src/UserInterface/MainScreen.tscn"
 
-[connection signal="button_down" from="GridContainer/SelectLevel_1" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_2" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_3" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_4" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_5" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_6" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_7" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_8" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_9" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_10" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_11" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_12" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_13" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_14" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_15" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_16" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_17" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_18" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_19" to="GridContainer/ButtonSound" method="play"]
-[connection signal="button_down" from="GridContainer/SelectLevel_20" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton1" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton2" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton3" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton4" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton5" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton6" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton7" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton8" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton9" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton10" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton11" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton12" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton13" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton14" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton15" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton16" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton17" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton18" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton19" to="GridContainer/ButtonSound" method="play"]
+[connection signal="button_down" from="GridContainer/SelectLevelButton20" to="GridContainer/ButtonSound" method="play"]
 [connection signal="button_down" from="BackToMainMenuButton" to="GridContainer/ButtonSound" method="play"]

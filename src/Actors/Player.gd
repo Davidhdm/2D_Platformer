@@ -82,4 +82,3 @@ func _calc_coyote_time(delta: float) -> void:
 
 func _die() -> void:
 	PlayerData.set_death_count()
-	queue_free()

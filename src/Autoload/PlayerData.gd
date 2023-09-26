@@ -11,7 +11,7 @@ var _death_count: int = 0:
 	get = get_death_count,
 	set = set_death_count
 
-var _levels_unlocked: int = 2:
+var _levels_unlocked: int = 1:
 	get = get_levels_unlocked,
 	set = set_levels_unlocked
 

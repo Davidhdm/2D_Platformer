@@ -1,16 +1,12 @@
 @tool
 extends Button
 
-@export var scene_path: String
-
-
-func _ready() -> void:
-	print(get_signal_connection_list("button_up"))
+@export var _scene_path: String
 
 
 func _on_button_up() -> void:
-	get_tree().change_scene_to_packed(load(scene_path))
+	SceneManager.change_scene(_scene_path)
 
 
 func _get_configuration_warnings() -> PackedStringArray:
-	return ["scene_path property can't be empty"] if not scene_path else []
+	return ["scene_path property can't be empty"] if not _scene_path else []

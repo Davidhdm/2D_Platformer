@@ -60,7 +60,7 @@ grow_vertical = 2
 [node name="PlayAgainButton" parent="Menu" instance=ExtResource("3_4uotx")]
 layout_mode = 2
 text = "Play Again"
-scene_path = "res://src/Levels/Level_01.tscn"
+_scene_path = "res://src/UserInterface/MainScreen.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource("5_rv68h")]
 layout_mode = 2

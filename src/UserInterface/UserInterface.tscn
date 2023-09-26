@@ -73,7 +73,7 @@ text = "Retry"
 [node name="BackToMainMenuButton" parent="PauseOverlay/Menu" instance=ExtResource("6_ksu5o")]
 layout_mode = 2
 text = "Back to Main Menu"
-scene_path = "res://src/UserInterface/MainScreen.tscn"
+_scene_path = "res://src/UserInterface/MainScreen.tscn"
 
 [connection signal="button_down" from="PauseOverlay/Menu/ResumeButton" to="PauseOverlay/Menu/ButtonSound" method="play"]
 [connection signal="button_up" from="PauseOverlay/Menu/ResumeButton" to="." method="_on_resume_button_up"]

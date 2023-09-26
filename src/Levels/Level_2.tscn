@@ -592,7 +592,8 @@ position = Vector2(4920, 400)
 
 [node name="Portal2D" parent="." instance=ExtResource("5_t0dis")]
 position = Vector2(400, 1640)
-scene_path = "res://src/UserInterface/EndScreen.tscn"
+_scene_path = "res://src/Levels/Level_3.tscn"
+_current_level = 2
 
 [connection signal="button_down" from="InterfaceLayer/UserInterface/PauseOverlay/Menu/ResumeButton" to="InterfaceLayer/UserInterface/PauseOverlay/Menu/ButtonSound" method="play" flags=18]
 [connection signal="button_up" from="InterfaceLayer/UserInterface/PauseOverlay/Menu/ResumeButton" to="InterfaceLayer/UserInterface" method="_on_resume_button_up" flags=18]

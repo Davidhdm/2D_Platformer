@@ -56,12 +56,12 @@ grow_vertical = 2
 
 [node name="PlayButton" parent="Menu" instance=ExtResource("3_0kvhc")]
 layout_mode = 2
-scene_path = "res://src/Levels/Level_1.tscn"
+_scene_path = "res://src/Levels/Level_1.tscn"
 
 [node name="SelectLevelButton" parent="Menu" instance=ExtResource("3_0kvhc")]
 layout_mode = 2
 text = "Select Level"
-scene_path = "res://src/UserInterface/SelectLevelScreen.tscn"
+_scene_path = "res://src/UserInterface/SelectLevelScreen.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource("5_watds")]
 layout_mode = 2

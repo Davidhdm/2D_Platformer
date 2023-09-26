@@ -1,7 +1,7 @@
 extends Control
 
-var _paused := false:
-	set = _set_paused
+var paused := false:
+	set = set_paused
 @onready var _scene_tree := get_tree() as SceneTree
 @onready var _pause_overlay := $PauseOverlay as ColorRect
 @onready var _score_label := $Score as Label
@@ -9,6 +9,7 @@ var _paused := false:
 
 
 func _ready() -> void:
+	paused = false
 	PlayerData.connect("score_updated", _update_interface)
 	PlayerData.connect("player_died", _on_PlayerData_player_died)
 	_update_interface()
@@ -16,17 +17,17 @@ func _ready() -> void:
 
 func _on_PlayerData_player_died() -> void:
 	_pause_title.text = "You died!"
-	_paused = true
+	paused = true
 
 
 func _on_retry_button_up() -> void:
 	PlayerData.reset_score()
-	_paused = false
+	paused = false
 	_scene_tree.reload_current_scene()
 
 
 func _on_resume_button_up() -> void:
-	_paused = false
+	paused = false
 
 
 func _update_interface() -> void:
@@ -35,11 +36,11 @@ func _update_interface() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		_paused = !_paused
+		paused = not paused
 		get_viewport().set_input_as_handled()
 
 
-func _set_paused(value: bool) -> void:
-	_paused = value
+func set_paused(value: bool) -> void:
+	paused = value
 	_scene_tree.paused = value
 	_pause_overlay.visible = value
