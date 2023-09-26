@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bemctpyhby2mk"]
+
+[ext_resource type="AudioStream" uid="uid://bu2v4nuebme63" path="res://assets/audio/button_click.ogg" id="1_jrm01"]
+
+[sub_resource type="GDScript" id="GDScript_ixk48"]
+script/source = "extends VBoxContainer
+
+@export var _button_desired_height: int
+@onready var _separation: int = get_theme_constant(\"separation\")
+@onready var _n_buttons: int = find_children(\"\", \"Button\").size()
+
+func _ready() -> void:
+	if _n_buttons > 0:
+		var box_height: int = (_button_desired_height + _separation) * _n_buttons - _separation
+		size.y = box_height
+"
+
+[node name="VButtonsBox" type="VBoxContainer"]
+offset_right = 200.0
+script = SubResource("GDScript_ixk48")
+_button_desired_height = 60
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_jrm01")

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://i4lulfx05shd"]
+
+[ext_resource type="Script" path="res://src/Actors/Player.gd" id="1_701qv"]
+[ext_resource type="Texture2D" uid="uid://by1r2tybd16kl" path="res://assets/player.png" id="1_xhcx5"]
+[ext_resource type="AudioStream" uid="uid://c1l5mv4drmgfh" path="res://assets/audio/enemy_killed.ogg" id="3_feds1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsv1f"]
+size = Vector2(86, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f4wn"]
+size = Vector2(96, 20)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 8
+floor_stop_on_slope = false
+script = ExtResource("1_701qv")
+_stomp_impulse = 1000.0
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(0, -48)
+texture = ExtResource("1_xhcx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_tsv1f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -179)
+limit_left = 0
+limit_top = 0
+limit_right = 6160
+limit_smoothed = true
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_right_margin = 0.0
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+modulate = Color(0, 0.321569, 1, 1)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_2f4wn")
+
+[node name="EnemyKilledSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_feds1")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://c81kmg6wueodr"]
+
+[ext_resource type="Texture2D" uid="uid://d4kq2xbjv6110" path="res://assets/background.png" id="1_fnqgk"]
+[ext_resource type="Theme" uid="uid://bsdvtp6plqhu5" path="res://assets/ui_theme.tres" id="1_xho72"]
+[ext_resource type="PackedScene" uid="uid://mygek38427f6" path="res://src/UserInterface/Title.tscn" id="2_6i5jq"]
+[ext_resource type="Script" path="res://src/UserInterface/EndScreen.gd" id="2_pfh0v"]
+[ext_resource type="PackedScene" uid="uid://d2i2h0disqcut" path="res://src/UserInterface/ChangeSceneButton.tscn" id="3_4uotx"]
+[ext_resource type="PackedScene" uid="uid://bemctpyhby2mk" path="res://src/UserInterface/Components/VButtonsBox.tscn" id="5_10t4i"]
+[ext_resource type="PackedScene" uid="uid://bb1ff1bbwtoxa" path="res://src/UserInterface/QuitButton.tscn" id="5_rv68h"]
+
+[node name="EndScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xho72")
+script = ExtResource("2_pfh0v")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fnqgk")
+expand_mode = 1
+
+[node name="Title" parent="." instance=ExtResource("2_6i5jq")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -224.0
+offset_right = 267.0
+offset_bottom = -112.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 43
+text = "Congratulations!
+You finished the game!"
+
+[node name="Menu" parent="." instance=ExtResource("5_10t4i")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -34.0
+offset_right = 100.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayAgainButton" parent="Menu" instance=ExtResource("3_4uotx")]
+layout_mode = 2
+text = "Play Again"
+scene_path = "res://src/Levels/Level_01.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource("5_rv68h")]
+layout_mode = 2
+
+[node name="TotalScore" parent="." instance=ExtResource("2_6i5jq")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = 156.0
+offset_right = 111.5
+offset_bottom = 195.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Total Score: %s"
+
+[node name="DeathCount" parent="." instance=ExtResource("2_6i5jq")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = 216.0
+offset_right = 135.5
+offset_bottom = 255.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "You died %s times"
+
+[connection signal="button_down" from="Menu/PlayAgainButton" to="Menu/ButtonSound" method="play"]
+[connection signal="button_down" from="Menu/QuitButton" to="Menu/ButtonSound" method="play"]
+
+[editable path="Menu"]

@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bsdvtp6plqhu5"]
+
+[ext_resource type="FontFile" uid="uid://dv382jtye42me" path="res://assets/montserrat_extrabold.otf" id="1_on52m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xarog"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_on52m")
+default_font_size = 22
+Button/styles/normal = SubResource("StyleBoxFlat_xarog")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 8
+Label/font_sizes/font_size = 28
+VBoxContainer/constants/separation = 12

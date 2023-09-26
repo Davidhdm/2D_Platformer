@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://djq0l3g1clk1a"]
+
+[ext_resource type="Theme" uid="uid://bsdvtp6plqhu5" path="res://assets/ui_theme.tres" id="1_krjpp"]
+[ext_resource type="PackedScene" uid="uid://mygek38427f6" path="res://src/UserInterface/Title.tscn" id="2_bmaal"]
+[ext_resource type="Script" path="res://src/UserInterface/UserInterface.gd" id="2_q0nad"]
+[ext_resource type="PackedScene" uid="uid://bemctpyhby2mk" path="res://src/UserInterface/Components/VButtonsBox.tscn" id="4_qmeeg"]
+[ext_resource type="PackedScene" uid="uid://d2i2h0disqcut" path="res://src/UserInterface/ChangeSceneButton.tscn" id="6_ksu5o"]
+
+[node name="UserInterface" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_krjpp")
+script = ExtResource("2_q0nad")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 200.0
+offset_bottom = 99.0
+text = "Score: %s"
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource("2_bmaal")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -160.0
+offset_top = 140.0
+offset_right = 160.0
+offset_bottom = 195.0
+text = "Game Paused"
+
+[node name="Menu" parent="PauseOverlay" instance=ExtResource("4_qmeeg")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -54.0
+offset_right = 134.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Resume"
+
+[node name="RetryButton" type="Button" parent="PauseOverlay/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Retry"
+
+[node name="BackToMainMenuButton" parent="PauseOverlay/Menu" instance=ExtResource("6_ksu5o")]
+layout_mode = 2
+text = "Back to Main Menu"
+scene_path = "res://src/UserInterface/MainScreen.tscn"
+
+[connection signal="button_down" from="PauseOverlay/Menu/ResumeButton" to="PauseOverlay/Menu/ButtonSound" method="play"]
+[connection signal="button_up" from="PauseOverlay/Menu/ResumeButton" to="." method="_on_resume_button_up"]
+[connection signal="button_down" from="PauseOverlay/Menu/RetryButton" to="PauseOverlay/Menu/ButtonSound" method="play"]
+[connection signal="button_up" from="PauseOverlay/Menu/RetryButton" to="." method="_on_retry_button_up"]
+[connection signal="button_down" from="PauseOverlay/Menu/BackToMainMenuButton" to="PauseOverlay/Menu/ButtonSound" method="play"]
+
+[editable path="PauseOverlay/Menu"]

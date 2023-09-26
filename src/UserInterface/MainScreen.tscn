@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://j7dpkxlc1qtc"]
+
+[ext_resource type="Theme" uid="uid://bsdvtp6plqhu5" path="res://assets/ui_theme.tres" id="1_rvc5m"]
+[ext_resource type="Texture2D" uid="uid://d4kq2xbjv6110" path="res://assets/background.png" id="2_gb70s"]
+[ext_resource type="PackedScene" uid="uid://d2i2h0disqcut" path="res://src/UserInterface/ChangeSceneButton.tscn" id="3_0kvhc"]
+[ext_resource type="PackedScene" uid="uid://bemctpyhby2mk" path="res://src/UserInterface/Components/VButtonsBox.tscn" id="3_dlvli"]
+[ext_resource type="PackedScene" uid="uid://bb1ff1bbwtoxa" path="res://src/UserInterface/QuitButton.tscn" id="5_watds"]
+
+[node name="MainScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rvc5m")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gb70s")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.0
+offset_top = 78.0
+offset_right = 107.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 43
+text = "My First Game"
+horizontal_alignment = 1
+
+[node name="Menu" parent="." instance=ExtResource("3_dlvli")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -34.0
+offset_right = 97.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" parent="Menu" instance=ExtResource("3_0kvhc")]
+layout_mode = 2
+scene_path = "res://src/Levels/Level_1.tscn"
+
+[node name="SelectLevelButton" parent="Menu" instance=ExtResource("3_0kvhc")]
+layout_mode = 2
+text = "Select Level"
+scene_path = "res://src/UserInterface/SelectLevelScreen.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource("5_watds")]
+layout_mode = 2
+
+[connection signal="button_down" from="Menu/PlayButton" to="Menu/ButtonSound" method="play"]
+[connection signal="button_down" from="Menu/SelectLevelButton" to="Menu/ButtonSound" method="play"]
+[connection signal="button_down" from="Menu/QuitButton" to="Menu/ButtonSound" method="play"]
+
+[editable path="Menu"]
